@@ -48,13 +48,20 @@ public class UserInfoLab {
     public static String generateUsername(String firstName, String lastName) {
         // Fill in this method and return an appropriate username
         String result = "";
-        for(int i = 0; i <= 3; i++){
-
+        if(firstName.length() <= 2){
+            result += firstName;
         }
-        return "";
+        if(lastName.length() <= 2){
+            result += lastName;
+        }
+        else{
+            result = firstName.substring(0,3) + lastName.substring(0,3);
+        }
+        return result;
     }
     public static boolean validatePassword(String password) {
         // Fill in this method and return true/false if the password is valid
+
         return true;
     }
     public static String maskCreditCard(String creditCardNumber) {
